@@ -332,6 +332,34 @@ namespace Fitness_Assistant_2isp11_17_MakhanovTEST
 
         }
         [TestMethod]
+        public void IsNameValid_Space_false()
+        {
+            //Arrange
+            string name = " ";
+            bool result = false;
+
+            //Act
+            bool act = IsNameValid(name);
+
+            //Assert
+            Assert.AreEqual(result, act);
+
+        }
+        [TestMethod]
+        public void IsNameValid_Dash_false()
+        {
+            //Arrange
+            string name = "-";
+            bool result = false;
+
+            //Act
+            bool act = IsNameValid(name);
+
+            //Assert
+            Assert.AreEqual(result, act);
+
+        }
+        [TestMethod]
         public void IsGenderValid_Correct_true()
         {
             //Arrange
