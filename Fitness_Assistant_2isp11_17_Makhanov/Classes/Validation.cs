@@ -55,14 +55,14 @@ namespace Fitness_Assistant_2isp11_17_Makhanov.Classes
             }
             return true;
         }
-        public static bool IsLoginValid(string login)
+        public static bool IsLoginValid(string login, bool edit)
         {
             if (login.Length < 1 || login.Length > 30)
             {
                 return false;
             }
             var userAuth = AppData.Context.User.ToList().FirstOrDefault(i => i.Login == login);
-            return userAuth == null;
+            return userAuth == null || edit;
         }
         public static bool IsNameValid(string name)
         {

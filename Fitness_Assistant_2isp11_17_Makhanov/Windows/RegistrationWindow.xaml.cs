@@ -31,7 +31,16 @@ namespace FitnessAssistant_Makhanov_2ISP11_17.Windows
             InitializeComponent();
             BtnReg.Content = "ИЗМЕНИТЬ ДАННЫЕ";
             txtTitle.Text = "Изменение данных";
-            this.id = u.idUser;
+            id = u.idUser;
+            TBLName.Text = u.LastName;
+            TBFName.Text = u.FirstName;
+            TBLog.Text = u.Login;
+            TBPas.Text = u.Password;
+            TBWeight.Text = u.Weight.ToString();
+            TBHeight.Text = u.Height.ToString();
+            TBBirthDate.Text = u.DateBirth.ToString();
+            Gender g = AppData.Context.Gender.ToList().FirstOrDefault(i => i.idGender == u.idGender);
+            CBGender.Text = g.Gender1;
         }
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
@@ -53,7 +62,7 @@ namespace FitnessAssistant_Makhanov_2ISP11_17.Windows
 
         private void BtnReg_Click(object sender, RoutedEventArgs e)
         {
-            bool flagLog = ValidationReg.IsLoginValid(TBLog.Text);
+            bool flagLog = ValidationReg.IsLoginValid(TBLog.Text, id != -1);
             bool flagPas = ValidationReg.IsPasswordValid(TBPas.Text);
             bool flagLName = ValidationReg.IsNameValid(TBLName.Text);
             bool flagFName = ValidationReg.IsNameValid(TBFName.Text);
@@ -65,13 +74,39 @@ namespace FitnessAssistant_Makhanov_2ISP11_17.Windows
             {
                 if (id == -1)
                 {
+                    Gender g = AppData.Context.Gender.ToList().FirstOrDefault(i => i.Gender1 == CBGender.Text);
+                    User newUser = new User
+                    {
+                        LastName = TBLName.Text,
+                        FirstName = TBFName.Text,
+                        Login = TBLog.Text,
+                        Password = TBPas.Text,
+                        Weight = double.Parse(TBWeight.Text),
+                        Height = double.Parse(TBHeight.Text),
+                        DateBirth = DateTime.Parse(TBBirthDate.Text),
+                        Gender = g
+                    };
+                    AppData.Context.User.Add(newUser);
                     MainWindow auth = new MainWindow();
                     auth.Show();
                     Close();
                 }
                 else
                 {
-                    var userAuth = AppData.Context.User.ToList().FirstOrDefault(i => i.idUser == id);
+                    var users = AppData.Context.User.ToList();
+                    var userAuth = users.FirstOrDefault(i => i.idUser == id);
+                    int n = users.IndexOf(userAuth);
+                    userAuth.LastName = TBLName.Text;
+                    userAuth.FirstName = TBFName.Text;
+                    userAuth.Login = TBLog.Text;
+                    userAuth.Password = TBPas.Text;
+                    userAuth.Weight = double.Parse(TBWeight.Text);
+                    userAuth.Height = double.Parse(TBHeight.Text);
+                    userAuth.DateBirth = DateTime.Parse(TBBirthDate.Text);
+                    Gender g = AppData.Context.Gender.ToList().FirstOrDefault(i => i.Gender1 == CBGender.Text);
+                    userAuth.Gender = g;
+                    users.RemoveAt(n);
+                    users.Insert(n, userAuth);
                     PersonalCabinetWindow cabinet = new PersonalCabinetWindow(userAuth);
                     cabinet.Show();
                     Close();
