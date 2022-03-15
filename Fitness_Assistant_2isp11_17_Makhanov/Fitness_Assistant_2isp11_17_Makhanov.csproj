@@ -158,10 +158,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="EF\Enteties.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Enteties.Context.cs</LastGenOutput>
       <DependentUpon>Enteties.edmx</DependentUpon>
+      <LastGenOutput>Enteties.Context.cs</LastGenOutput>
     </Content>
     <Content Include="EF\Enteties.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -169,9 +172,5 @@
       <LastGenOutput>Enteties.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

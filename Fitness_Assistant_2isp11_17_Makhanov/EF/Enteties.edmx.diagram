@@ -4,11 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3f952e2371094eaf9df8f20a29c1608b" Name="Diagram1">
-        <EntityTypeShape EntityType="FitnessAssistant_Makhanov_2ISP11_17Model.Gender" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="FitnessAssistant_Makhanov_2ISP11_17Model.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="FitnessAssistant_Makhanov_2ISP11_17Model.User" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="FitnessAssistant_Makhanov_2ISP11_17Model.FK_User_Gender" ManuallyRouted="false" />
+      <Diagram DiagramId="715944fd25d04876bfd86a634d215cf0" Name="Diagram1">
+        <EntityTypeShape EntityType="FitnessModel.Gender" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FitnessModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FitnessModel.User" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="FitnessModel.FK_User_Gender" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

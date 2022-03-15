@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Fitness_Assistant_2isp11_17_Makhanov.EF
+namespace Fitness_Assistant_2isp11_17_MakhanovTEST.EF
 {
     using System;
     using System.Data.Entity;
@@ -15,10 +15,10 @@ namespace Fitness_Assistant_2isp11_17_Makhanov.EF
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class FitnessEntities : DbContext
+    public partial class FitnessEntitiesTest : DbContext
     {
-        public FitnessEntities()
-            : base("name=FitnessEntities")
+        public FitnessEntitiesTest()
+            : base("name=FitnessEntitiesTest")
         {
         }
     

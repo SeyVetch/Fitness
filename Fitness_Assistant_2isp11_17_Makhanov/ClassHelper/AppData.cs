@@ -8,6 +8,6 @@ namespace Fitness_Assistant_2isp11_17_Makhanov.ClassHelper
 {
     class AppData
     {
-        public static EF.FitnessAssistant_Makhanov_2ISP11_17Entities Context { get; } = new EF.FitnessAssistant_Makhanov_2ISP11_17Entities();
+        public static EF.FitnessEntities Context { get; } = new EF.FitnessEntities();
     }
 }

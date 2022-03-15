@@ -38,7 +38,7 @@ namespace FitnessAssistant_Makhanov_2ISP11_17.Windows
             TBPas.Text = u.Password;
             TBWeight.Text = u.Weight.ToString();
             TBHeight.Text = u.Height.ToString();
-            TBBirthDate.Text = u.DateBirth.ToString();
+            TBBirthDate.Text = u.DateBirth.Date.ToString();
             Gender g = AppData.Context.Gender.ToList().FirstOrDefault(i => i.idGender == u.idGender);
             CBGender.Text = g.Gender1;
         }
@@ -62,7 +62,7 @@ namespace FitnessAssistant_Makhanov_2ISP11_17.Windows
 
         private void BtnReg_Click(object sender, RoutedEventArgs e)
         {
-            bool flagLog = ValidationReg.IsLoginValid(TBLog.Text, id != -1);
+            bool flagLog = id != -1 ? ValidationReg.IsLoginValid(TBLog.Text, id) : ValidationReg.IsLoginValid(TBLog.Text);
             bool flagPas = ValidationReg.IsPasswordValid(TBPas.Text);
             bool flagLName = ValidationReg.IsNameValid(TBLName.Text);
             bool flagFName = ValidationReg.IsNameValid(TBFName.Text);
@@ -87,6 +87,7 @@ namespace FitnessAssistant_Makhanov_2ISP11_17.Windows
                         Gender = g
                     };
                     AppData.Context.User.Add(newUser);
+                    AppData.Context.SaveChanges();
                     MainWindow auth = new MainWindow();
                     auth.Show();
                     Close();
@@ -107,6 +108,7 @@ namespace FitnessAssistant_Makhanov_2ISP11_17.Windows
                     userAuth.Gender = g;
                     users.RemoveAt(n);
                     users.Insert(n, userAuth);
+                    AppData.Context.SaveChanges();
                     PersonalCabinetWindow cabinet = new PersonalCabinetWindow(userAuth);
                     cabinet.Show();
                     Close();
@@ -116,31 +118,6 @@ namespace FitnessAssistant_Makhanov_2ISP11_17.Windows
             {
                 Brush err = Brushes.Red;
                 Brush blue = BtnCancel.BorderBrush;
-                //Style CB = (Style)FindResource("ComboBoxToggleButton");
-                //Style CBBlue = CB;
-                //Style CBErr = CB;
-                //Setter col = new Setter();
-                //col.Property = "BorderBrush";
-                //CBErr.Resources.Add(col);
-                //Setter template = (Setter)CB.Setters.FirstOrDefault(i => ((Setter)i).Property.Name == "Template");
-                //int n = CB.Setters.IndexOf(template);
-                //ControlTemplate CT = (ControlTemplate)template.Value;
-                //ResourceDictionary tr = CT.FindName("templateRoot", Border);
-                //Border BBlue = (Border)CT.Resources["templateRoot"];
-                //Border BErr = (Border)CT.Resources["templateRoot"];
-                //BErr.BorderBrush = err;
-                //BBlue.BorderBrush = blue;
-                //ControlTemplate CTBlue = CT;
-                //CTBlue.Resources["templateRoot"] = BBlue;
-                //Setter TBlue = template;
-                //TBlue.Value = CTBlue;
-                //CBBlue.Setters[n] = TBlue;
-                //ControlTemplate CTErr = CT;
-                //CTErr.Resources["templateRoot"] = BErr;
-                //Setter TErr = template;
-                //TErr.Value = CTErr;
-                //CBErr.Setters[n] = TErr;
-                //Resources["ComboBoxToggleButton"] = CBErr;
 
                 TBLog.BorderBrush = flagLog ? blue : err;
                 TBPas.BorderBrush = flagPas ? blue : err;
@@ -148,7 +125,6 @@ namespace FitnessAssistant_Makhanov_2ISP11_17.Windows
                 TBFName.BorderBrush = flagFName ? blue : err;
                 TBWeight.BorderBrush = flagWeight ? blue : err;
                 TBHeight.BorderBrush = flagHeight ? blue : err;
-                //CBGender.Style = flagGender ? CBBlue : CBErr;
                 TBBirthDate.BorderBrush = flagBirthDate ? blue : err;
             }
         }
