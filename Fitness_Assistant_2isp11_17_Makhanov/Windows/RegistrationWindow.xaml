@@ -1,0 +1,213 @@
+﻿<Window x:Class="FitnessAssistant_Makhanov_2ISP11_17.Windows.RegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Регистрация" Height="750" Width="1000"
+        MinHeight="750" MinWidth="1000">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Grid Background="#FF1B357C">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.4*"/>
+                <RowDefinition Height="2.7*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="3.3*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Row="1" Grid.Column="1">
+                <TextBlock Text="Фитнес помощник"
+                           FontSize="22"
+                           TextAlignment="Center"
+                           Foreground="White"/>
+                <TextBlock Text="Регистрация"
+                           Name="txtTitle"
+                           FontSize="20"
+                           TextAlignment="Center"
+                           Foreground="White"
+                           Margin="0, 10, 0, 0"/>
+                <TextBlock Text="Заполните поля, обязательные для ввода"
+                           FontSize="18"
+                           TextAlignment="Center"
+                           Foreground="White"
+                           Margin="0, 10, 0, 0"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.9*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.9*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="1.2*"/>
+                <RowDefinition/>
+                <RowDefinition Height="1.1*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Column="2"
+                  Grid.ColumnSpan="2"
+                  Grid.Row="3"
+                  Grid.RowSpan="3">
+                <TextBlock Text="Пароль должен соотвествовать следующим условиям:"
+                           TextWrapping="Wrap"
+                           FontSize="20"
+                           Margin="15, 4, 12, 0"
+                           Foreground="#FF1B357C"/>
+                <TextBlock Text="- количество символов от 8 до 20;"
+                           TextWrapping="Wrap"
+                           FontSize="20"
+                           Margin="25, 4, 12, 0"
+                           Foreground="#FF1B357C"/>
+                <TextBlock Text="- наличие цифр;"
+                           TextWrapping="Wrap"
+                           FontSize="20"
+                           Margin="25, 0, 12, 0"
+                           Foreground="#FF1B357C"/>
+                <TextBlock Text="- наличие спец символов;"
+                           TextWrapping="Wrap"
+                           FontSize="20"
+                           Margin="25, 0, 12, 0"
+                           Foreground="#FF1B357C"/>
+                <TextBlock Text="- наличие прописных и строчных букв;"
+                           TextWrapping="Wrap"
+                           FontSize="20"
+                           Margin="25, 0, 12, 0"
+                           Foreground="#FF1B357C"/>
+                
+            </StackPanel>
+            <TextBlock Grid.Row="1" 
+                       VerticalAlignment="Center"
+                       TextAlignment="Right"
+                       Text="Логин"
+                       FontSize="23"
+                       Foreground="#FF1B357C"/>
+            <TextBox x:Name="TBLog"
+                     Grid.Row="1" 
+                     Grid.Column="1"
+                     FontSize="20"
+                     Margin="15, 8"
+                     Style="{DynamicResource TextBoxStyle1}"/>
+            <TextBlock Grid.Row="2" 
+                       VerticalAlignment="Center"
+                       TextAlignment="Right"
+                       Text="Пароль"
+                       FontSize="23"
+                       Foreground="#FF1B357C"/>
+            <TextBox x:Name="TBPas"
+                     Grid.Row="2" 
+                     Grid.Column="1"
+                     FontSize="20"
+                     Margin="15, 8"
+                     Style="{DynamicResource TextBoxStyle1}"/>
+            <TextBlock Grid.Row="3" 
+                       VerticalAlignment="Center"
+                       TextAlignment="Right"
+                       Text="Фамилия"
+                       FontSize="23"
+                       Foreground="#FF1B357C"/>
+            <TextBox x:Name="TBLName"
+                     Grid.Row="3" 
+                     Grid.Column="1"
+                     FontSize="20"
+                     Margin="15, 8"
+                     Style="{DynamicResource TextBoxStyle1}"/>
+            <TextBlock Grid.Row="4" 
+                       VerticalAlignment="Center"
+                       TextAlignment="Right"
+                       Text="Имя"
+                       FontSize="23"
+                       Foreground="#FF1B357C"/>
+            <TextBox x:Name="TBFName"
+                     Grid.Row="4" 
+                     Grid.Column="1"
+                     FontSize="20"
+                     Margin="15, 8"
+                     Style="{DynamicResource TextBoxStyle1}"/>
+            <TextBlock Grid.Row="5" 
+                       VerticalAlignment="Center"
+                       TextAlignment="Right"
+                       Text="Рост (см.)"
+                       FontSize="23"
+                       Foreground="#FF1B357C"/>
+            <TextBox x:Name="TBHeight"
+                     Grid.Row="5" 
+                     Grid.Column="1"
+                     FontSize="20"
+                     Margin="15, 8"
+                     Style="{DynamicResource TextBoxStyle1}"/>
+            <TextBlock Grid.Row="6" 
+                       VerticalAlignment="Center"
+                       TextAlignment="Right"
+                       Text="Вес (кг.)"
+                       FontSize="23"
+                       Foreground="#FF1B357C"/>
+            <TextBox x:Name="TBWeight"
+                     Grid.Row="6" 
+                     Grid.Column="1"
+                     FontSize="20"
+                     Margin="15, 8"
+                     Style="{DynamicResource TextBoxStyle1}"/>
+            <TextBlock Grid.Row="7" 
+                       VerticalAlignment="Center"
+                       TextAlignment="Right"
+                       Text="Дата рождения"
+                       FontSize="23"
+                       Foreground="#FF1B357C"/>
+            <TextBox x:Name="TBBirthDate"
+                     Grid.Row="7" 
+                     Grid.Column="1"
+                     FontSize="20"
+                     Margin="15, 8"
+                     Style="{DynamicResource TextBoxStyle1}"/>
+            <Button x:Name="BtnReg"
+                    Grid.Row="9" 
+                    Grid.Column="1"
+                    Margin="3, 8, 15, 8"
+                    Content="ЗАРЕГЕСТИРОВАТЬСЯ"
+                    FontSize="18"
+                    Foreground="White"
+                    Background="#FF1B357C" Click="BtnReg_Click"/>
+            <Button x:Name="BtnCancel"
+                    Grid.Row="9" 
+                    Grid.Column="2"
+                    Margin="15, 8"
+                    Content="ОТМЕНА"
+                    FontSize="18"
+                    Foreground="#FF1B357C"
+                    Background="White"
+                    BorderBrush="#FF1B357C" Click="BtnCancel_Click"/>
+            <ComboBox x:Name="CBGender"
+                      Style="{DynamicResource ComboBoxStyle1}" 
+                      Grid.Row="7"
+                      Grid.Column="2"
+                      Margin="15, 8"
+                      FontSize="20"
+                      VerticalContentAlignment="Center"
+                      Foreground="#FF1B357C">
+                <ComboBoxItem>
+                    <TextBlock Text="Женский"/>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock Text="Мужской"/>
+                </ComboBoxItem>
+            </ComboBox>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,192 @@
+﻿<Window x:Class="FitnessAssistant_Makhanov_2ISP11_17.Windows.PersonalCabinetWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FitnessAssistant_Makhanov_2ISP11_17.Windows"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Личный кабинет" Height="750" Width="800"
+        MinHeight="750" MinWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Background="#FF1B357C">
+            <TextBlock Text="Фитнес помощник"
+                       FontSize="30"
+                       TextAlignment="Center"
+                       VerticalAlignment="Center"
+                       Foreground="White"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="1">
+                <TextBlock x:Name="txtWelcome" 
+                           Text="Добро пожаловать, !"
+                           HorizontalAlignment="Center"
+                           Margin="0, 15, 0, 0"
+                           FontSize="24"
+                           Foreground="#FF1B357C"/>
+                <Line X1="0" X2="420" Y1="20" Y2="20" 
+                      StrokeThickness="1.5"
+                      Stroke="#FF1B357C"
+                      HorizontalAlignment="Center"/>
+                <TextBlock Text="Ваши текущие показатели:"
+                           Margin="15, 15, 15, 0"
+                           FontSize="20"
+                           Foreground="#FF1B357C"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="0.8*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Horizontal"
+                                Margin="15, 10, 0, 0" Grid.Column="0">
+                        <TextBlock Text="Вес (кг.):"
+                                   FontSize="20"
+                                   Margin="0, 0, 10, 0"
+                                   Foreground="#FF1B357C"/>
+                        <TextBlock x:Name="txtWeight"
+                                   Text="54"
+                                   FontSize="20"
+                                   Foreground="#FF1B357C" 
+                                   FontWeight="Bold"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"
+                            Margin="0, 10, 0, 0" Grid.Column="1">
+                        <TextBlock Text="Рост (см.):"
+                                   FontSize="20"
+                                   Margin="0, 0, 10, 0"
+                                   Foreground="#FF1B357C"/>
+                        <TextBlock x:Name="txtHeight"
+                                   Text="173"
+                                   FontSize="20"
+                                   Foreground="#FF1B357C" 
+                                   FontWeight="Bold"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"
+                            Margin="0, 10, 0, 0" Grid.Column="2">
+                        <TextBlock Text="Возраст:"
+                                   FontSize="20"
+                                   Margin="0, 0, 10, 0"
+                                   Foreground="#FF1B357C"/>
+                        <TextBlock x:Name="txtAge"
+                                   Text="20"
+                                   FontSize="20"
+                                   Foreground="#FF1B357C" 
+                                   FontWeight="Bold"/>
+                    </StackPanel>
+                </Grid>
+                <Line X1="0" X2="600" Y1="20" Y2="20" 
+                      StrokeThickness="1.5"
+                      Margin="0, 0, 0, 15"
+                      Stroke="#FF1B357C"
+                      HorizontalAlignment="Center"/>
+                <Grid Margin="15, 0, 15, 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Индекс массы тела составляет:"
+                               FontSize="18"
+                               TextWrapping="Wrap"
+                               Foreground="#FF1B357C" />
+                    <StackPanel Grid.Column="1"
+                                Orientation="Horizontal">
+                        <TextBlock Name="txtIndexMass"
+                                   Text="18.04 кг/м2"
+                                   Grid.Column="1"
+                                   VerticalAlignment="Bottom"
+                                   FontSize="18"
+                                   TextWrapping="Wrap"
+                                   FontWeight="Bold"
+                                   Foreground="#FF1B357C" />
+                        <TextBlock Name="txtIndexRes"
+                                   Text="Недостаточная (дефецит) масса тела"
+                                   Grid.Column="1"
+                                   Margin="10, 0, 0, 0"
+                                   VerticalAlignment="Bottom"
+                                   FontSize="16"
+                                   TextWrapping="Wrap"
+                                   FontWeight="Bold"
+                                   Foreground="#FF1B357C" />
+                    </StackPanel>
+                </Grid>
+                <TextBlock Text="Величина, позволяющая оценить соответствия массы человека и его роста и тем самым косвенно судить о том, является ли масса недостаточной, нормальной или избыточной. Важен при определении показаний для необходимости лечения."
+                           Margin="15, 10, 15, 0"
+                           FontSize="13"
+                           TextWrapping="Wrap"
+                           Foreground="#FF1B357C" 
+                           FontStyle="Italic"/>
+                <Line X1="0" X2="600" Y1="20" Y2="20" 
+                      StrokeThickness="1.5"
+                      Margin="0, 0, 0, 15"
+                      Stroke="#FF1B357C"
+                      HorizontalAlignment="Center"/>
+                <Grid Margin="15, 0, 15, 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Уровень базального металболизма:"
+                               FontSize="18"
+                               TextWrapping="Wrap"
+                               Foreground="#FF1B357C" />
+                    <TextBlock Name="txtIndexMetabolism"
+                               Text="1 315 ккал/день"
+                               Grid.Column="1"
+                               VerticalAlignment="Bottom"
+                               FontSize="18"
+                               TextWrapping="Wrap"
+                               FontWeight="Bold"
+                               Foreground="#FF1B357C"/>
+                </Grid>
+                <TextBlock Text="Это приблизительное количество калорий, которые вы бы сожгли, если бы целые сутки провели, ничего не делая. Это минимальное количество энергии, необходимое для поддержания жизнедеятельности организма, включая такие его функции, как дыхание и сердцебиение."
+                           Margin="15, 10, 15, 0"
+                           FontSize="13"
+                           TextWrapping="Wrap"
+                           Foreground="#FF1B357C" 
+                           FontStyle="Italic"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="BtnChange"
+                    Content="ИЗМЕНИТЬ ПОКАЗАТЕЛИ"
+                    FontSize="13"
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    Margin="10, 3"
+                    Background="#FF1B357C"
+                    Foreground="White" Click="BtnChange_Click"/>
+            <Button x:Name="BtnExit"
+                    Content="ВЫЙТИ"
+                    FontSize="13"
+                    Grid.Column="2"
+                    Grid.Row="1"
+                    Margin="10, 3"
+                    BorderBrush="#FF1B357C"
+                    Foreground="#FF1B357C"
+                    Background="White" Click="BtnExit_Click"/>
+        </Grid>
+    </Grid>
+</Window>
