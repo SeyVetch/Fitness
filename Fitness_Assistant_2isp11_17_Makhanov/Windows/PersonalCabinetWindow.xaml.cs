@@ -32,10 +32,11 @@ namespace FitnessAssistant_Makhanov_2ISP11_17.Windows
             txtAge.Text = user.Age.ToString();
             txtHeight.Text = user.Height.ToString();
             txtWeight.Text = user.Weight.ToString();
-            double h = user.Height / 100;
-            double h2 = h * h;
-            double indexMass = user.Weight / h2;
+            double indexMass = user.indexMass;
             txtIndexMass.Text = indexMass.ToString() + "кг/м2";
+            txtIndexRes.Text = ParametersClass.BMIType(indexMass);
+            double indexMetabolism = user.indexMetabolism;
+            txtIndexMetabolism.Text = indexMetabolism.ToString() + " ккал/день";
         }
 
         private void BtnExit_Click(object sender, RoutedEventArgs e)

@@ -25,6 +25,20 @@ namespace Fitness_Assistant_2isp11_17_Makhanov.EF
         public string Login { get; set; }
         public string Password { get; set; }
         public byte[] Photo { get; set; }
+        public double indexMass 
+        { 
+            get
+            {
+                return ClassHelper.ParametersClass.BMI(Weight, Height);
+            } 
+        }
+        public double indexMetabolism
+        {
+            get
+            {
+                return ClassHelper.ParametersClass.BMR(idGender, Height, Weight, (double)Age);
+            }
+        }
     
         public virtual Gender Gender { get; set; }
     }

@@ -67,6 +67,7 @@
     </ApplicationDefinition>
     <Compile Include="Classes\Validation.cs" />
     <Compile Include="ClassHelper\AppData.cs" />
+    <Compile Include="ClassHelper\ParametersClass.cs" />
     <Compile Include="EF\Enteties.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
